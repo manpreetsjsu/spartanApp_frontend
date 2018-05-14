@@ -88,8 +88,8 @@ class landingPage extends Component {
                 onDismiss={this.handleDismiss}
                 size='huge'
                 success
-                header='Your user registration was successful'
-                content='You may now log-in with the username you have chosen'/>
+                header='Your user registration is successful'
+                content='You may now log-in with the username and password'/>
         }
 
         //unsuccessful Login message display
@@ -102,7 +102,7 @@ class landingPage extends Component {
                 size='massive'
                 negative
                 header='Login Failed'
-                content='Login Failed because of some reason'/>
+                content='Login Failed as we can not validate your provided credentials'/>
         }
 
         //unsuccessful Signup message display
@@ -114,8 +114,8 @@ class landingPage extends Component {
                 onDismiss={this.handleSignupDismiss}
                 size='massive'
                 negative
-                header='Login Failed'
-                content='Login Failed because of some reason'/>
+                header='SignUp Failed'
+                content='SignUp Failed as you provided invalid input'/>
         }
 
         if(this.state.loginRedirect){
@@ -147,6 +147,7 @@ class landingPage extends Component {
                 size='huge'
                 content='Signup'
                 onClick={this.renderSignup}/>
+
             {renderOutput}
 
         </div>
