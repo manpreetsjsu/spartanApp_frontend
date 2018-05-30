@@ -12,5 +12,10 @@
     z-index: 100;
     position: relative;
     left:-3px;
+}
+#closeIcon{
+    z-index: 100;
+    position:relative;
+    left:3px;
     top:-9px;
 }

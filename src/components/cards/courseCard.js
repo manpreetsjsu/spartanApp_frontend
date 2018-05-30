@@ -3,6 +3,7 @@ import {Card,Image,Button} from 'semantic-ui-react';
 
 
 
+
 const CourseCard = (props) => {
     return (
         <Card raised>
@@ -12,8 +13,8 @@ const CourseCard = (props) => {
                 <Card.Meta>Instructor:{props.instructor}</Card.Meta>
                 <Card.Meta>Mentor:{props.tutor}</Card.Meta>
                 <Card.Description>
-                    <Button color='blue'>
-                        Click here for more info
+                    <Button onClick={props.enrollCourse} color='blue' >
+                        Click to enroll this course
                     </Button>
                 </Card.Description>
             </Card.Content>

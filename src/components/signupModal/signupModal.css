@@ -9,8 +9,14 @@
 }
 
 #closeIcon{
+<<<<<<< HEAD
     z-index: 50;
     position: relative;
     left:-3px;
+=======
+    position: relative;
+    z-index:100;
+    left: 3px;
+>>>>>>> 49bf18ea07a6535c795dc49015857a7e3e18fae3
     top:-9px;
 }

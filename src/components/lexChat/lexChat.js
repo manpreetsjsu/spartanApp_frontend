@@ -10,7 +10,7 @@ class LexChat extends React.Component {
         this.state = {
             data: '',
             lexUserId: 'chatbot-demo' + Date.now(),
-            sessionAttributes: {}, visible: 'open'
+            sessionAttributes: {}, visible: 'closed'
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -30,7 +30,7 @@ class LexChat extends React.Component {
     }
 
     handleClick() {
-        this.setState({ visible: this.state.visible == 'open'? 'closed' : 'open' });
+        this.setState({ visible: this.state.visible === 'open'? 'closed' : 'open' });
         console.log(this.state);
     }
 
@@ -140,13 +140,16 @@ class LexChat extends React.Component {
             responsePara.appendChild(document.createElement('br'));
         }
         if (lexResponse.dialogState === 'ReadyForFulfillment') {
-            responsePara.appendChild(document.createTextNode('Ready for fulfillment'));
+            //responsePara.appendChild(document.createTextNode('Ready for fulfillment'));
             // TODO:  show slot values
         } else {
             responsePara.appendChild(document.createTextNode(
                 ''));
         }
-        conversationDiv.appendChild(responsePara);
+        if(responsePara){
+            conversationDiv.appendChild(responsePara);
+        }
+
         conversationDiv.scrollTop = conversationDiv.scrollHeight;
     }
 

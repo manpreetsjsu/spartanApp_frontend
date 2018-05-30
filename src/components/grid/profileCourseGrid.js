@@ -1,6 +1,7 @@
 import React from 'react';
-import CourseCard from '../cards/courseCard';
 import {Grid} from 'semantic-ui-react';
+import ProfileCourseCard from '../cards/profileCourseCard';
+import poster from '../../assets/images/poster.png';
 let courses=[
     {name:'CMPE 280',instructor:'Ron Mak',tutor:'Avdeep Sandhu',image:'cmpe146'},
     {name:'CMPE 281',instructor:'Jerry Gao',tutor:'Harkanwaldeep Saini',image:'cmpe146'},
@@ -24,21 +25,22 @@ let courses=[
 
 ];
 
-const CourseGrid = () => {
+const CourseGrid = (props) => {
 
     return (
         <div>
             {
-                courses.map((course,index)=>
+                props.allCourses.map((course,index)=>
                     <Grid.Column
                         width={1}
                         key={index}
                         style={{marginBottom:'10%',display:'inline-block',marginRight:'2%',marginLeft:'2%'}}>
-                        <CourseCard
-                            header={courses[index].name}
-                            instructor={courses[index].instructor}
+                        <ProfileCourseCard
+                            header={course.name}
+                            instructor={course.instructor}
                             image={courses[index].image}
-                            tutor={courses[index].tutor}/>
+                            tutor={course.tutor}
+                            disEnrollCourse={()=>props.disEnrollCourse(course.name)}/>
                     </Grid.Column>
                 )
             }
@@ -47,4 +49,4 @@ const CourseGrid = () => {
     );
 
 };
-export default CourseGrid
+export default CourseGrid;

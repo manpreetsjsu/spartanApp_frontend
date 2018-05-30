@@ -70,6 +70,7 @@ class landingPage extends Component {
 
 
     render() {
+
         //render LoginModal if Login button pressed
         let renderOutput=null;
         if(this.state.loginActive){
@@ -119,7 +120,7 @@ class landingPage extends Component {
         }
 
         if(this.state.loginRedirect){
-            return(<Redirect to={'/home'}/>)
+            return(<Redirect to={'/profile'}/>)
         }
 
         return (
